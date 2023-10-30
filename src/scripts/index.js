@@ -30,7 +30,12 @@ return card;
 }
 
 function renderCards(list){
-    
+    const totalAmount = list.reduce((acc,currentValue)=>{       
+     return acc+currentValue.value;
+    },0);
+
+    const totalSum=document.querySelector("#total-amount");
+    totalSum.innerText=`R$ ${totalAmount}`;
     const itemList = document.querySelector(".list__itens");
     itemList.innerHTML= ' ';
     for(item of list){
@@ -39,4 +44,13 @@ function renderCards(list){
 
 }
 
+
+function openModal(){
+const button = document.querySelector("#header__button");
+const modal = document.querySelector("#modal__new-value")
+button.addEventListener("click", ()=>{
+    modal.showModal();
+})
+}
 renderCards(insertedValues);
+openModal();

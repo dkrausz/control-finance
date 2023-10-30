@@ -1,4 +1,5 @@
 /* Desenvolva a estilização da sua página aqui */
+@import url(./modal.css);
 main {
     display: flex;
     flex-direction: column;
