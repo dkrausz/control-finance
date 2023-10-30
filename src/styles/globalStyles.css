@@ -43,6 +43,10 @@
 
 body {
   font-family: var(--font-family-1);
+  background-color: var(--color-mode);
+  max-width: 1256px;
+  width: 100%;
+  margin: auto;
 }
 
 .container {

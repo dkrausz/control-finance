@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Finance</title>
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      name="description"
-      content="Control Finance - Seu controle financeiro"
-    />
-    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-  </head>
-  <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Finance</title>
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+</head>
+
+<body>
+  <header class="header__container">
+    <h1 class="header__title">Control <span class="header__title--black">Finance</span></h1>
+    <button id="header__button">Registrar novo valor</button>
+  </header>
+  <main id="app">
+    <div class="filter__container">
+      <h2 class="filter__title">Resumo Financeiro</h2>
+      <div class="filter__button-container">
+        <button id="all__button" class="filter__button">Todos</button>
+        <button id="income__button" class="filter__button">Entradas</button>
+        <button id="outcome__button" class="filter__button filter__button--selected">Saídas</button>
+      </div>
+    </div>
+    <div class="total__container">
+      <h2 class="total__title">Soma dos valores</h2>
+      <h2 id="total-amount">R$1151.00</h2>
+    </div>
+    <ul class="list__itens">
+      <li class="item__container">
+        <h3 class="item__price">R$ 80.00</h3>
+        <div class="item__buttons">
+        <span class="item__category">Saída</span>
+        <button class="item__del-button" ></button>
+      </div>
+      </li>
+      <li class="item__container">
+        <h3 class="item__price">R$ 801.00</h3>
+        <div class="item__buttons">
+          <span class="item__category">Saída</span>
+          <button class="item__del-button" ></button>
+        </div>
+      </li>
+      <li class="item__container">
+        <h3 class="item__price">R$ 180.00</h3>
+        <div class="item__buttons">
+          <span class="item__category">Saída</span>
+          <button class="item__del-button" ></button>
+        </div>
+      </li>
+      
+    </ul>
+  </main>
+  <script src="./src/scripts/modal.js"></script>
+  <script src="./src/scripts/valuesData.js"></script>
+  <script src="./src/scripts/index.js"></script>
+</body>
+
 </html>
