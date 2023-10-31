@@ -23,9 +23,9 @@
     <div class="filter__container">
       <h2 class="filter__title">Resumo Financeiro</h2>
       <div class="filter__button-container">
-        <button id="all__button" class="filter__button">Todos</button>
+        <button id="all__button" class="filter__button filter__button--selected">Todos</button>
         <button id="income__button" class="filter__button">Entradas</button>
-        <button id="outcome__button" class="filter__button filter__button--selected">Saídas</button>
+        <button id="outcome__button" class="filter__button ">Saídas</button>
       </div>
     </div>
     <div class="total__container">
@@ -44,28 +44,31 @@
 
     </ul>
   </main>
-  <dialog  id="modal__new-value">
-    <h2>Registro de valor</h2>
-    <button>X</button>
-    <p>digite o calor e em seguida aperto o botão referente ao tipo de valor</p>
-    <h3>Valor</h3>
-    <input type="text" name="value" id="input__value" placeholder="R$ 00,00">
-    <div>
-      <div><h3>Tipo de valor</h3>
-      <button>Entrada</button>
-      <button>Saída</button>
-    
-    </div>
 
-    <div>
-      <button>Cancelar</button>
-      <button>Inserir valor</button>
+  <dialog id="modal__new-value">
+    <div class="modal__header">
+      <h2 class="modal__title">Registro de valor</h2>
+      <button class="modal__close-button">X</button>
     </div>
-
+    <p class="modal__text">digite o calor e em seguida aperto o botão referente ao tipo de valor</p>
+    <h3 class="modal__value">Valor</h3>
+    <div class="modal__input">
+      <span>R$</span>
+    <input type="text" name="value" id="input__value" placeholder="00,00">
+  </div>
+    <div class="modal__category">
+      <h3 class="category__title">Tipo de valor</h3>
+      <button class="category__button category__button-selected " id="modal__income-button">Entrada</button>
+      <button class="category__button" id="modal__outcome-button">Saída</button>
+    </div>
+    <div class="modal__div-buttons">
+      <button class="modal__cancel-button">Cancelar</button>
+      <button class="modal__confirm-button">Inserir valor</button>
+    </div>
   </dialog>
 
-  <script src="./src/scripts/modal.js"></script>
   <script src="./src/scripts/valuesDatabase.js"></script>
+  <script src="./src/scripts/modal.js"></script>
   <script src="./src/scripts/index.js"></script>
 </body>
 

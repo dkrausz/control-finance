@@ -13,7 +13,7 @@ category.classList.add("item__category");
 delButton.classList.add("item__del-button");
 card.classList.add("item__container");
 
-title.innerText=item.value;
+title.innerText=`R$ ${item.value}`;
 category.innerText=valuesCategory[item.categoryID];
 
 divButtons.append(category,delButton);
@@ -44,7 +44,6 @@ function renderCards(list){
 
 }
 
-
 function openModal(){
 const button = document.querySelector("#header__button");
 const modal = document.querySelector("#modal__new-value")
@@ -52,5 +51,49 @@ button.addEventListener("click", ()=>{
     modal.showModal();
 })
 }
-renderCards(insertedValues);
+
+function filterButtons(){
+    const allButton = document.querySelector("#all__button");
+    const incomeButton = document.querySelector("#income__button");
+    const outcomeButton = document.querySelector("#outcome__button");
+
+    allButton.addEventListener("click",()=>{
+        allButton.classList.add("filter__button--selected");
+        incomeButton.classList.remove("filter__button--selected");
+        outcomeButton.classList.remove("filter__button--selected");
+
+        renderCards(insertedValues);
+    });
+
+    incomeButton.addEventListener("click",()=>{
+        incomeButton.classList.add("filter__button--selected");
+        allButton.classList.remove("filter__button--selected");
+        outcomeButton.classList.remove("filter__button--selected");
+
+     const Filterlist = insertedValues.filter((item)=>{
+        
+        return item.categoryID===0;
+     })   
+     console.log(Filterlist);
+        renderCards(Filterlist);
+    });
+
+    outcomeButton.addEventListener("click",()=>{
+        outcomeButton.classList.add("filter__button--selected");
+        allButton.classList.remove("filter__button--selected");
+        incomeButton.classList.remove("filter__button--selected");
+
+     const Filterlist = insertedValues.filter((item)=>{
+        
+        return item.categoryID===1;
+     })   
+     console.log(Filterlist);
+        renderCards(Filterlist);
+    });
+
+}
+
+
 openModal();
+filterButtons();
+renderCards(insertedValues);
