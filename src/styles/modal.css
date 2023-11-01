@@ -1,11 +1,17 @@
-#modal__new-value {
-    margin: auto;
-    height: 22rem;
-    width: 26rem;
-    padding: 1.5rem;
+
+#modal__new-value{
     border-radius: var(--radius-1);
     background-color: var(--color-mode);
     border: none;
+    margin: auto;
+}
+
+.modal__container {
+   
+    height: 22rem;
+    width: 26rem;
+    padding: 1.5rem;
+  
 }
 
 .modal__header {
@@ -48,6 +54,10 @@
     padding: 0 1rem;
 
 }
+.modal__input:hover{
+    border-radius: var(--radius-1);
+border: 1.5px solid var(--color-brand-1);
+}
 
 .modal__input>span {
     color: var(--color-grey-2);
@@ -55,6 +65,7 @@
 }
 
 #input__value {
+    -moz-appearance: textfield;
     border: none;
     height: 2rem;
     padding: 0 0.5rem;
@@ -63,6 +74,10 @@
     font-size: var(--font-size-3);
 
 }
+#input__value::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 
 
 
@@ -113,10 +128,14 @@
     color: var(--color-grey-2);
     font-size: var(--font-size-3);
     font-weight: var(--font-weight-1);
-    border: 1.5px solid var(--color-grey-4);
-    background-color: var(--color-grey-4);
+    border: 1.5px solid var(--color-grey-5);
+    background-color: var(--color-grey-5);
     padding: 0.5rem 0.875rem;
     border-radius: var(--radius-1);
+}
+.modal__cancel-button:hover{
+    border: 1.5px solid var(--color-grey-4);
+    background-color: var(--color-grey-4);  
 }
 
 .modal__confirm-button {
@@ -127,8 +146,10 @@
     background-color: var(--color-brand-1);
     padding: 0.5rem 0.875rem;
     border-radius: var(--radius-1);
-
-
+}
+.modal__confirm-button:hover{
+    border: 1.5px solid var(--color-brand-2);
+    background-color: var(--color-brand-2);
 }
 
 ::backdrop {
@@ -136,7 +157,7 @@
 }
 
 @media(max-width:426px) {
-    #modal__new-value {
+    .modal__container {
         height: 25rem;
     }
 
@@ -177,3 +198,4 @@
         width: 10rem;
     }
 }
+

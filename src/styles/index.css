@@ -48,6 +48,11 @@ main {
     border: 1.5px solid var(--color-brand-1);
 }
 
+#header__button:hover{
+    border: 1.5px solid var(--color-brand-2);
+    background-color: var(--color-brand-2);
+}
+
 .filter__container {
     display: flex;
     justify-content: space-between;
@@ -130,6 +135,15 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background: var(--color-mode);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-1);
+border: 1.5px transparent var(--color-brand-1);
+}
+
+.item__container:hover{
+border-radius: var(--radius-1);
+border: 1.5px solid var(--color-brand-1);
 }
 
 .item__price {
@@ -167,6 +181,8 @@ main {
 
 }
 
+
+
 @media(min-width:427px) and (max-width:768px) {
 
     .filter__container {
@@ -177,6 +193,35 @@ main {
         gap: 4rem;
     }
 }
+
+.item__container--empty{
+    list-style-type: none;
+    background-color:var(--color-grey-5);
+    width:70%;
+   border: 1.5px dashed var(--color-grey-3);
+   border-radius: var(--radius-1); 
+   display: flex;
+   gap: 1rem;flex-direction: column;
+   align-items: center;
+   padding-block: 1rem;
+}
+.hidden-class{
+    display: none;
+}
+
+.item__title--empty{
+    color: var(--color-grey-1);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+
+}
+.item__text--empty{
+    color: var(--color-grey-2);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-size-2);
+
+}
+
 
 @media(max-width:426px) {
 

@@ -32,7 +32,6 @@ function readCategory() {
 
 }
 
-
 function addValue() {
     const confirmButton = document.querySelector(".modal__confirm-button");
     const input = document.querySelector("#input__value");
@@ -45,11 +44,12 @@ function addValue() {
         insertedValues.push(newItem);
         modal.close();
         input.value='';
-        renderCards(insertedValues);
+        renderCards(insertedValues,isFiltered);
     });
 }
 
 function biggerID(list) {
+    if(list.length==0) return -1;
     let biggerNumeber = list[0].id;
     list.forEach((item) => {
         if (item.id > biggerNumeber) {

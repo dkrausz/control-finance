@@ -32,38 +32,44 @@
       <h2 class="total__title">Soma dos valores</h2>
       <h2 id="total-amount">R$1151.00</h2>
     </div>
+    <div class="item__container--empty hidden-class">
+      <h2 class="item__title--empty">Nenhum valor cadastrado</h2>
+      <p class="item__text--empty">Registrar novo valor</p>
+    </div>
     <ul class="list__itens">
-      <li class="item__container">
+   
+      <!-- <li class="item__container">
         <h3 class="item__price">R$ 80.00</h3>
         <div class="item__buttons">
           <span class="item__category">Saída</span>
           <button class="item__del-button"></button>
         </div>
-      </li>
-
+      </li> -->
 
     </ul>
   </main>
 
   <dialog id="modal__new-value">
-    <div class="modal__header">
-      <h2 class="modal__title">Registro de valor</h2>
-      <button class="modal__close-button">X</button>
-    </div>
-    <p class="modal__text">digite o calor e em seguida aperto o botão referente ao tipo de valor</p>
-    <h3 class="modal__value">Valor</h3>
-    <div class="modal__input">
-      <span>R$</span>
-    <input type="text" name="value" id="input__value" placeholder="00,00">
-  </div>
-    <div class="modal__category">
-      <h3 class="category__title">Tipo de valor</h3>
-      <button class="category__button category__button-selected " id="modal__income-button">Entrada</button>
-      <button class="category__button" id="modal__outcome-button">Saída</button>
-    </div>
-    <div class="modal__div-buttons">
-      <button class="modal__cancel-button">Cancelar</button>
-      <button class="modal__confirm-button">Inserir valor</button>
+    <div class="modal__container">
+      <div class="modal__header">
+        <h2 class="modal__title">Registro de valor</h2>
+        <button class="modal__close-button">X</button>
+      </div>
+      <p class="modal__text">digite o calor e em seguida aperto o botão referente ao tipo de valor</p>
+      <h3 class="modal__value">Valor</h3>
+      <div class="modal__input">
+        <span>R$</span>
+        <input type="number" name="value" id="input__value" placeholder="00,00">
+      </div>
+      <div class="modal__category">
+        <h3 class="category__title">Tipo de valor</h3>
+        <button class="category__button category__button-selected " id="modal__income-button">Entrada</button>
+        <button class="category__button" id="modal__outcome-button">Saída</button>
+      </div>
+      <div class="modal__div-buttons">
+        <button class="modal__cancel-button">Cancelar</button>
+        <button class="modal__confirm-button">Inserir valor</button>
+      </div>
     </div>
   </dialog>
 
