@@ -8,23 +8,23 @@ function creatItem(item) {
     const category = document.createElement("span");
     const delButton = document.createElement("button");
     const card = document.createElement("li");
-
+    
     title.classList.add("item__price");
     divButtons.classList.add("item__buttons");
     category.classList.add("item__category");
     delButton.classList.add("item__del-button");
     card.classList.add("item__container");
-
+    
     title.innerText = `R$ ${item.value}`;
     category.innerText = valuesCategory[item.categoryID];
-
+    
     divButtons.append(category, delButton);
     card.append(title, divButtons);
-
+    
     delButton.addEventListener("click", () => {
         const index = insertedValues.indexOf(item);
         insertedValues.splice(index, 1);
-
+        
         renderCards(insertedValues, isFiltered);
     })
 
@@ -35,7 +35,7 @@ function renderCards(list, type) {
     const totalSum = document.querySelector("#total-amount");
     const itemList = document.querySelector(".list__itens");
     const emptyDiv = document.querySelector(".item__container--empty");
-
+    
     if (list.length === 0) {       
         emptyDiv.classList.remove("hidden-class");
         totalSum.innerText=`R$ 00.00`;
@@ -45,11 +45,11 @@ function renderCards(list, type) {
     
     emptyDiv.classList.add("hidden-class");
     let renderList = [];
-
+    
     itemList.innerHTML = ' ';
     if (type === 0) {
         renderList = [...list];
-
+        
     } else if (type === 1) {
         const Filterlist = insertedValues.filter((item) => {
             return item.categoryID === 0;
@@ -61,30 +61,35 @@ function renderCards(list, type) {
         })
         renderList = [...Filterlist];
     }
-
-    for (item of renderList) {
+    
+    renderList.forEach((item)=>{
         itemList.appendChild(creatItem(item));
-    }
-
+    });
+        
+   
+    
     const totalAmount = renderList.reduce((acc, currentValue) => {
         return acc + currentValue.value;
     }, 0);
-
+    
     totalSum.innerText = `R$ ${totalAmount}`;
 }
 
 function openModal() {
-    const button = document.querySelector("#header__button");
     const modal = document.querySelector("#modal__new-value");
+    const button = document.querySelector("#header__button");
     const emptyList = document.querySelector(".item__container--empty");
     button.addEventListener("click", () => {
         modal.showModal();
+        modal.classList.add("modal__roll");
     });
     emptyList.addEventListener("click", () => {
         modal.showModal();
+        modal.classList.add("modal__roll");
     });
-
+    
 }
+
 
 function filterButtons() {
     const allButton = document.querySelector("#all__button");

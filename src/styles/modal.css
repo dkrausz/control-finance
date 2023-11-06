@@ -1,9 +1,15 @@
 
-#modal__new-value{
+.modal__new-value{
     border-radius: var(--radius-1);
     background-color: var(--color-mode);
     border: none;
-    margin: auto;
+    margin-block: -150%;
+    margin-inline: auto;
+    transition: margin-block 0.8s ;
+}
+.modal__roll{
+    margin-top: 20vh;
+    transition: margin-block 0.8s ;
 }
 
 .modal__container {

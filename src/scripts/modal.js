@@ -7,10 +7,12 @@ function modalCloseButtons() {
 
     closeButton.addEventListener("click", () => {
         modal.close();
+        modal.classList.remove("modal__roll");
     });
 
     cancelButton.addEventListener("click", () => {
         modal.close();
+        modal.classList.remove("modal__roll");
     });
 }
 
@@ -45,6 +47,7 @@ function addValue() {
         modal.close();
         input.value='';
         renderCards(insertedValues,isFiltered);
+        modal.classList.remove("modal__roll");
     });
 }
 
